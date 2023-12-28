@@ -21,15 +21,15 @@ static void Dialog(GSimpleAction *action, GVariant *parameter, GApplication *app
     /*GtkFilterListModel *filter_list = gtk_filter_list_model_new (NULL, file_filter);
     gtk_filter_list_model_set_filter(filter_list, file_filter); */
 
-    const char suffix[5] = "urtv"; 
-    GtkWidget *window;
+    /*GtkWidget *window;
     GtkWidget *box;
     window = gtk_window_new();
     gtk_window_set_title(GTK_WINDOW(window), "File Chooser");
     box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
     gtk_widget_set_halign(box, GTK_ALIGN_CENTER);
     gtk_widget_set_valign(box, GTK_ALIGN_CENTER);
-    gtk_window_set_child(GTK_WINDOW(window), box);
+    gtk_window_set_child(GTK_WINDOW(window), box);*/
+    const char suffix[5] = "urtv"; 
     gtk_file_filter_add_suffix(file_filter, suffix); 
     gtk_file_dialog_set_default_filter(file_chooser, file_filter); 
     gtk_file_dialog_set_initial_folder(file_chooser, folder); 
