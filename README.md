@@ -15,7 +15,9 @@ This program was designed in order to create a file (Or edit a pre-existing one)
 Currently, a fair bit of the basic framework has been built.  (This includes a main selection screen, and some of the additional screens). 
 A file menu is included in this basic framework, though the features it provides are currently being worked on (More specifically, the way to choose a specific file).  The Victor tab works perfectly, as it should. 
 Currently, I'm trying to figure out how to filter a GTK file chooser screen.  It isn't working though, so that might take a bit.  
-Each day, when selected, will eventually have the ability to select between each individual hour, much like the main selection screen.  Each of these hours will have drag-and-drop functionality, which will allow the user to drag a file onto the screen to select order.  There will be a clear button at the bottom of the page for editing purposes.  (This *should* be easy, but we'll see).  Whenever a new file is added, the program should read the length of the files for the hour, and prompt the user with this information.  
+Each day, when selected, now gives you the option of selecting one of 24 buttons (One for each hour in a day).  Selecting one of these buttons will (eventually) allow the user to edit the configuration file as to their desire.  The framework for this would be quite extensive in terms of putting it on every single button, so for testing purposes, only Sunday at 12AM is functional in this regard.  Once this is finished, it will be copied and changed as needed to support each option.  Edits to each hour will be made to a configuration file, eventually filling up an entire weeks worth of programming.  
+
+This program uses a custom type of file for storing it's configurations.  It will be denoted by *.urtv, and the specifications for it will be uploaded here as soon as they are finalized.  
 
 Another program will be able to read this configuration file and play everything according to it, streaming it as needed.  
 
