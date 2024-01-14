@@ -3,10 +3,1064 @@
 static int Button_one_count = 1;
 static int Button_two_count = 1;
 unsigned int index123 = 0;
+/*By all modern estimates, this program will be (Without any logic concerning actually storing the presets and saving them), so literally just a GUI, 
+35,000 lines.  All C.  I'm going insane.  Like... actually insane.  */
+
+void sunday(); 
+static void Sun1 (GtkDialog *dialog, int response); 
+void saturday(); 
+void friday(); 
+void thursday(); 
+void wednesday(); 
+void tuesday(); 
+void monday(); 
+static void Dialog(GSimpleAction *action, GVariant *parameter, GApplication *application); 
+static void victor_second(GSimpleAction *action, GVariant *parameter, GApplication *application); 
+static void victor_third(GSimpleAction *action, GVariant *parameter, GApplication *application); 
+static void victor_first(GSimpleAction *action, GVariant *parameter, GApplication *application); 
+static void fullscreen_changed(GSimpleAction *action, GVariant *value, GtkWindow *win); 
+static void quit_activated(GSimpleAction *action, GVariant *parameter, GApplication *application); 
+static void get_file(GtkWidget *widget, gpointer data); 
+static void print_hello(GtkWidget *widget, gpointer data); 
+static void cb_test(GtkWidget *widget, gpointer data); 
+static void about_new(GtkWidget *widget, gpointer data); 
+static void activate(GtkApplication *app, gpointer user_data); 
+/*Declare all the functions*/
+
+int
+grab_int_value (GtkSpinButton *button,
+                gpointer       user_data)
+{
+  return gtk_spin_button_get_value_as_int (button);
+}
 
 
+void sunday()
+{
+    GtkWidget *window;
+    GtkGrid *Grid;
+    GtkWidget *button1;
+    GtkWidget *button2; 
+    GtkWidget *button3; 
+    GtkWidget *button4; 
+    GtkWidget *button5; 
+    GtkWidget *button6; 
+    GtkWidget *button7; 
+    GtkWidget *button8; 
+    GtkWidget *button9; 
+    GtkWidget *button10; 
+    GtkWidget *button11; 
+    GtkWidget *button12; 
+    GtkWidget *button13; 
+    GtkWidget *button14; 
+    GtkWidget *button15; 
+    GtkWidget *button16; 
+    GtkWidget *button17; 
+    GtkWidget *button18; 
+    GtkWidget *button19; 
+    GtkWidget *button20; 
+    GtkWidget *button21; 
+    GtkWidget *button22; 
+    GtkWidget *button23; 
+    GtkWidget *button24; 
+    GtkWidget *button25; 
+
+    /*These are all the widgets.  There are 24 buttons due to the 24 hours in a day.  */
+    window = gtk_window_new();
+    gtk_window_set_title(GTK_WINDOW(window), "Sunday");
+    Grid = gtk_grid_new(); 
+    gtk_window_set_child(GTK_WINDOW(window), Grid);
+    /*Construct the window and the grid as it's child.  */
+    button1 = gtk_button_new_with_label("12AM");
+    button2 = gtk_button_new_with_label("1AM");
+    button3 = gtk_button_new_with_label("2AM");
+    button4 = gtk_button_new_with_label("3AM");
+    button5 = gtk_button_new_with_label("4AM");
+    button6 = gtk_button_new_with_label("5AM");
+    button7 = gtk_button_new_with_label("6AM");
+    button8 = gtk_button_new_with_label("7AM");
+    button9 = gtk_button_new_with_label("8AM");
+    button10 = gtk_button_new_with_label("9AM");
+    button11 = gtk_button_new_with_label("10AM");
+    button12 = gtk_button_new_with_label("11AM");
+    button13 = gtk_button_new_with_label("12PM");
+    button14 = gtk_button_new_with_label("1PM");
+    button15 = gtk_button_new_with_label("2PM");
+    button16 = gtk_button_new_with_label("3PM");
+    button17 = gtk_button_new_with_label("4PM");
+    button18 = gtk_button_new_with_label("5PM");
+    button19 = gtk_button_new_with_label("6PM");
+    button20 = gtk_button_new_with_label("7PM");
+    button21 = gtk_button_new_with_label("8PM");
+    button22 = gtk_button_new_with_label("9PM");
+    button23 = gtk_button_new_with_label("10PM");
+    button24 = gtk_button_new_with_label("11PM");
+    button25 = gtk_button_new_with_label("Confirm");
+
+    /*Create 24 buttons that list the hour*/
+    g_signal_connect_swapped(button1, "clicked", G_CALLBACK(Sun1), NULL);
+    g_signal_connect_swapped(button2, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button3, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button4, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button5, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button6, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button7, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button8, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button9, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button10, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button11, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button12, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button13, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button14, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button15, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button16, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button17, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button18, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button19, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button20, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button21, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button22, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button23, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button24, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button25, "clicked", G_CALLBACK(gtk_window_destroy), window);
+
+    /*When any button is pressed, close the window
+    This will change later on in the program, but it is easier to do it this way for now.  */
+    gtk_grid_attach(Grid, button1, 1, 1, 1, 1); 
+    gtk_grid_attach(Grid, button2, 1, 2, 1, 1); 
+    gtk_grid_attach(Grid, button3, 1, 3, 1, 1); 
+    gtk_grid_attach(Grid, button4, 1, 4, 1, 1); 
+    gtk_grid_attach(Grid, button5, 1, 5, 1, 1); 
+    gtk_grid_attach(Grid, button6, 1, 6, 1, 1); 
+    gtk_grid_attach(Grid, button7, 2, 1, 1, 1); 
+    gtk_grid_attach(Grid, button8, 2, 2, 1, 1); 
+    gtk_grid_attach(Grid, button9, 2, 3, 1, 1); 
+    gtk_grid_attach(Grid, button10, 2, 4, 1, 1); 
+    gtk_grid_attach(Grid, button11, 2, 5, 1, 1); 
+    gtk_grid_attach(Grid, button12, 2, 6, 1, 1); 
+    gtk_grid_attach(Grid, button13, 3, 1, 1, 1); 
+    gtk_grid_attach(Grid, button14, 3, 2, 1, 1); 
+    gtk_grid_attach(Grid, button15, 3, 3, 1, 1); 
+    gtk_grid_attach(Grid, button16, 3, 4, 1, 1); 
+    gtk_grid_attach(Grid, button17, 3, 5, 1, 1); 
+    gtk_grid_attach(Grid, button18, 3, 6, 1, 1); 
+    gtk_grid_attach(Grid, button19, 4, 1, 1, 1); 
+    gtk_grid_attach(Grid, button20, 4, 2, 1, 1); 
+    gtk_grid_attach(Grid, button21, 4, 3, 1, 1); 
+    gtk_grid_attach(Grid, button22, 4, 4, 1, 1); 
+    gtk_grid_attach(Grid, button23, 4, 5, 1, 1); 
+    gtk_grid_attach(Grid, button24, 4, 6, 1, 1); 
+    gtk_grid_attach(Grid, button25, 1, 7, 4, 1); 
+    gtk_window_present(GTK_WINDOW(window));
+    /*Attatch the buttons to the Grid and organize them accordingly.  Also, present the window and it's child. */
+}
+
+static void Sun1 (GtkDialog *dialog, int response)
+{
+    GtkWidget *window;
+    GtkGrid *Grid;
+    GtkWidget *button1;
+    GtkWidget *number; 
+    GtkWidget *entry; 
+    GtkWidget *entry1; 
+    GtkWidget *entry2; 
+    GtkWidget *label1; 
+    GtkWidget *label2; 
+    GtkWidget *label3; 
+    GtkWidget *label4; 
+    GtkAdjustment *adjustment;
+
+    GtkWidget *anumber; 
+    GtkWidget *aentry; 
+    GtkWidget *aentry1; 
+    GtkWidget *aentry2; 
+    GtkAdjustment *aadjustment;
+
+    GtkWidget *bnumber; 
+    GtkWidget *bentry; 
+    GtkWidget *bentry1; 
+    GtkWidget *bentry2; 
+    GtkAdjustment *badjustment;
+
+    GtkWidget *cnumber; 
+    GtkWidget *centry; 
+    GtkWidget *centry1; 
+    GtkWidget *centry2; 
+    GtkAdjustment *cadjustment;
+
+    GtkWidget *dnumber; 
+    GtkWidget *dentry; 
+    GtkWidget *dentry1; 
+    GtkWidget *dentry2; 
+    GtkAdjustment *dadjustment;
+
+    GtkWidget *enumber; 
+    GtkWidget *eentry; 
+    GtkWidget *eentry1; 
+    GtkWidget *eentry2; 
+    GtkAdjustment *eadjustment;
+
+    GtkWidget *fnumber; 
+    GtkWidget *fentry; 
+    GtkWidget *fentry1; 
+    GtkWidget *fentry2; 
+    GtkAdjustment *fadjustment;
+
+    GtkWidget *gnumber; 
+    GtkWidget *gentry; 
+    GtkWidget *gentry1; 
+    GtkWidget *gentry2; 
+    GtkAdjustment *gadjustment;
+
+    GtkWidget *hnumber; 
+    GtkWidget *hentry; 
+    GtkWidget *hentry1; 
+    GtkWidget *hentry2;  
+    GtkAdjustment *hadjustment;
+
+    GtkWidget *inumber; 
+    GtkWidget *ientry; 
+    GtkWidget *ientry1; 
+    GtkWidget *ientry2; 
+    GtkAdjustment *iadjustment;
+
+    GtkWidget *jnumber; 
+    GtkWidget *jentry; 
+    GtkWidget *jentry1; 
+    GtkWidget *jentry2;     
+    GtkAdjustment *jadjustment;
 
 
+    window = gtk_window_new();
+    gtk_window_set_title(GTK_WINDOW(window), "Sunday, 12AM");
+    Grid = gtk_grid_new(); 
+    gtk_window_set_child(GTK_WINDOW(window), Grid);
+    adjustment = gtk_adjustment_new (1.0, 1.0, 10.0, 1.0, 5.0, 0.0);
+    button1 = gtk_button_new_with_label("Confirm");
+    g_signal_connect_swapped(button1, "clicked", G_CALLBACK(gtk_window_destroy), window);
+
+    number = gtk_spin_button_new (adjustment, 1.0, 0);
+    entry = gtk_entry_new(); 
+    entry1 = gtk_entry_new(); 
+    entry2 = gtk_entry_new();
+
+    aadjustment = gtk_adjustment_new (2.0, 1.0, 10.0, 1.0, 5.0, 0.0);
+    anumber = gtk_spin_button_new (aadjustment, 1.0, 0);
+    aentry = gtk_entry_new(); 
+    aentry1 = gtk_entry_new(); 
+    aentry2 = gtk_entry_new(); 
+
+    badjustment = gtk_adjustment_new (3.0, 1.0, 10.0, 1.0, 5.0, 0.0);
+    bnumber = gtk_spin_button_new (badjustment, 1.0, 0);
+    bentry = gtk_entry_new(); 
+    bentry1 = gtk_entry_new(); 
+    bentry2 = gtk_entry_new(); 
+
+    cadjustment = gtk_adjustment_new (4.0, 1.0, 10.0, 1.0, 5.0, 0.0);
+    cnumber = gtk_spin_button_new (cadjustment, 1.0, 0);
+    centry = gtk_entry_new(); 
+    centry1 = gtk_entry_new(); 
+    centry2 = gtk_entry_new();     
+
+    dadjustment = gtk_adjustment_new (5.0, 1.0, 10.0, 1.0, 5.0, 0.0);
+    dnumber = gtk_spin_button_new (dadjustment, 1.0, 0);
+    dentry = gtk_entry_new(); 
+    dentry1 = gtk_entry_new(); 
+    dentry2 = gtk_entry_new();
+
+    eadjustment = gtk_adjustment_new (6.0, 1.0, 10.0, 1.0, 5.0, 0.0);
+    enumber = gtk_spin_button_new (eadjustment, 1.0, 0);
+    eentry = gtk_entry_new(); 
+    eentry1 = gtk_entry_new(); 
+    eentry2 = gtk_entry_new(); 
+
+    fadjustment = gtk_adjustment_new (7.0, 1.0, 10.0, 1.0, 5.0, 0.0);
+    fnumber = gtk_spin_button_new (fadjustment, 1.0, 0);
+    fentry = gtk_entry_new(); 
+    fentry1 = gtk_entry_new(); 
+    fentry2 = gtk_entry_new();  
+
+    gadjustment = gtk_adjustment_new (8.0, 1.0, 10.0, 1.0, 5.0, 0.0);
+    gnumber = gtk_spin_button_new (gadjustment, 1.0, 0);
+    gentry = gtk_entry_new(); 
+    gentry1 = gtk_entry_new(); 
+    gentry2 = gtk_entry_new(); 
+
+    hadjustment = gtk_adjustment_new (9.0, 1.0, 10.0, 1.0, 5.0, 0.0);
+    hnumber = gtk_spin_button_new (hadjustment, 1.0, 0);
+    hentry = gtk_entry_new(); 
+    hentry1 = gtk_entry_new(); 
+    hentry2 = gtk_entry_new();  
+
+    iadjustment = gtk_adjustment_new (10.0, 1.0, 10.0, 1.0, 5.0, 0.0);
+    inumber = gtk_spin_button_new (iadjustment, 1.0, 0);
+    ientry = gtk_entry_new(); 
+    ientry1 = gtk_entry_new(); 
+    ientry2 = gtk_entry_new();  
+
+    jadjustment = gtk_adjustment_new (1.0, 0.0, 10.0, 1.0, 5.0, 0.0);
+    jnumber = gtk_spin_button_new (jadjustment, 1.0, 0);
+    jentry = gtk_entry_new(); 
+    jentry1 = gtk_entry_new(); 
+    jentry2 = gtk_entry_new();      
+
+    label1 = gtk_label_new(NULL);
+    gtk_label_set_markup(GTK_LABEL(label1), "<span font=\"12\" color=\"#000000\">"
+                                            "<b>Order</b>"
+                                            "</span >");
+    label2 = gtk_label_new(NULL);
+    gtk_label_set_markup(GTK_LABEL(label2), "<span font=\"12\" color=\"#000000\">"
+                                            "<b>Common Name</b>"
+                                            "</span >");
+    label3 = gtk_label_new(NULL);
+    gtk_label_set_markup(GTK_LABEL(label3), "<span font=\"12\" color=\"#000000\">"
+                                            "<b>Path</b>"
+                                            "</span >");
+    label4 = gtk_label_new(NULL);
+    gtk_label_set_markup(GTK_LABEL(label4), "<span font=\"12\" color=\"#000000\">"
+                                            "<b>Time (Seconds)</b>"
+                                            "</span >");
+
+
+    gtk_grid_attach(Grid, label1, 1, 1, 1, 1); 
+    gtk_grid_attach(Grid, label2, 2, 1, 1, 1); 
+    gtk_grid_attach(Grid, label3, 3, 1, 1, 1); 
+    gtk_grid_attach(Grid, label4, 4, 1, 1, 1); 
+
+    gtk_grid_attach(Grid, button1, 1, 12, 4, 1); 
+
+    gtk_grid_attach(Grid, number, 1, 2, 1, 1); 
+    gtk_grid_attach(Grid, entry, 2, 2, 1, 1); 
+    gtk_grid_attach(Grid, entry1, 3, 2, 1, 1); 
+    gtk_grid_attach(Grid, entry2, 4, 2, 1, 1); 
+
+    gtk_grid_attach(Grid, anumber, 1, 3, 1, 1); 
+    gtk_grid_attach(Grid, aentry, 2, 3, 1, 1); 
+    gtk_grid_attach(Grid, aentry1, 3, 3, 1, 1); 
+    gtk_grid_attach(Grid, aentry2, 4, 3, 1, 1);     
+
+    gtk_grid_attach(Grid, bnumber, 1, 4, 1, 1); 
+    gtk_grid_attach(Grid, bentry, 2, 4, 1, 1); 
+    gtk_grid_attach(Grid, bentry1, 3, 4, 1, 1); 
+    gtk_grid_attach(Grid, bentry2, 4, 4, 1, 1); 
+
+    gtk_grid_attach(Grid, cnumber, 1, 5, 1, 1); 
+    gtk_grid_attach(Grid, centry, 2, 5, 1, 1); 
+    gtk_grid_attach(Grid, centry1, 3, 5, 1, 1); 
+    gtk_grid_attach(Grid, centry2, 4, 5, 1, 1); 
+
+    gtk_grid_attach(Grid, dnumber, 1, 6, 1, 1); 
+    gtk_grid_attach(Grid, dentry, 2, 6, 1, 1); 
+    gtk_grid_attach(Grid, dentry1, 3, 6, 1, 1); 
+    gtk_grid_attach(Grid, dentry2, 4, 6, 1, 1);
+
+    gtk_grid_attach(Grid, enumber, 1, 7, 1, 1); 
+    gtk_grid_attach(Grid, eentry, 2, 7, 1, 1); 
+    gtk_grid_attach(Grid, eentry1, 3, 7, 1, 1); 
+    gtk_grid_attach(Grid, eentry2, 4, 7, 1, 1); 
+
+    gtk_grid_attach(Grid, fnumber, 1, 8, 1, 1); 
+    gtk_grid_attach(Grid, fentry, 2, 8, 1, 1); 
+    gtk_grid_attach(Grid, fentry1, 3, 8, 1, 1); 
+    gtk_grid_attach(Grid, fentry2, 4, 8, 1, 1); 
+
+    gtk_grid_attach(Grid, hnumber, 1, 9, 1, 1); 
+    gtk_grid_attach(Grid, hentry, 2, 9, 1, 1); 
+    gtk_grid_attach(Grid, hentry1, 3, 9, 1, 1); 
+    gtk_grid_attach(Grid, hentry2, 4, 9, 1, 1); 
+       
+    gtk_grid_attach(Grid, inumber, 1, 10, 1, 1); 
+    gtk_grid_attach(Grid, ientry, 2, 10, 1, 1); 
+    gtk_grid_attach(Grid, ientry1, 3, 10, 1, 1); 
+    gtk_grid_attach(Grid, ientry2, 4, 10, 1, 1);     
+
+    gtk_window_present(GTK_WINDOW(window));
+
+  // creates the spinbutton, with no decimal places
+
+}
+/*This one is for editing the first hour.  Once this gets completed, it can get copied whatever 24*7 is times
+Is this a terrible way to do this?  Yes.  Does it work?  Yes.  Do I have to worry about system resources?  No.
+Ergo, is it fine?  Yes.  Am I going crazy?  : )*/
+
+
+void saturday()
+{
+    GtkWidget *window;
+    GtkGrid *Grid;
+    GtkWidget *button1;
+    GtkWidget *button2; 
+    GtkWidget *button3; 
+    GtkWidget *button4; 
+    GtkWidget *button5; 
+    GtkWidget *button6; 
+    GtkWidget *button7; 
+    GtkWidget *button8; 
+    GtkWidget *button9; 
+    GtkWidget *button10; 
+    GtkWidget *button11; 
+    GtkWidget *button12; 
+    GtkWidget *button13; 
+    GtkWidget *button14; 
+    GtkWidget *button15; 
+    GtkWidget *button16; 
+    GtkWidget *button17; 
+    GtkWidget *button18; 
+    GtkWidget *button19; 
+    GtkWidget *button20; 
+    GtkWidget *button21; 
+    GtkWidget *button22; 
+    GtkWidget *button23; 
+    GtkWidget *button24; 
+    /*These are all the widgets.  There are 24 buttons due to the 24 hours in a day.  */
+    window = gtk_window_new();
+    gtk_window_set_title(GTK_WINDOW(window), "Saturday");
+    Grid = gtk_grid_new(); 
+    gtk_window_set_child(GTK_WINDOW(window), Grid);
+    /*Construct the window and the grid as it's child.  */
+    button1 = gtk_button_new_with_label("12AM");
+    button2 = gtk_button_new_with_label("1AM");
+    button3 = gtk_button_new_with_label("2AM");
+    button4 = gtk_button_new_with_label("3AM");
+    button5 = gtk_button_new_with_label("4AM");
+    button6 = gtk_button_new_with_label("5AM");
+    button7 = gtk_button_new_with_label("6AM");
+    button8 = gtk_button_new_with_label("7AM");
+    button9 = gtk_button_new_with_label("8AM");
+    button10 = gtk_button_new_with_label("9AM");
+    button11 = gtk_button_new_with_label("10AM");
+    button12 = gtk_button_new_with_label("11AM");
+    button13 = gtk_button_new_with_label("12PM");
+    button14 = gtk_button_new_with_label("1PM");
+    button15 = gtk_button_new_with_label("2PM");
+    button16 = gtk_button_new_with_label("3PM");
+    button17 = gtk_button_new_with_label("4PM");
+    button18 = gtk_button_new_with_label("5PM");
+    button19 = gtk_button_new_with_label("6PM");
+    button20 = gtk_button_new_with_label("7PM");
+    button21 = gtk_button_new_with_label("8PM");
+    button22 = gtk_button_new_with_label("9PM");
+    button23 = gtk_button_new_with_label("10PM");
+    button24 = gtk_button_new_with_label("11PM");
+    /*Create 24 buttons that list the hour*/
+    g_signal_connect_swapped(button1, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button2, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button3, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button4, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button5, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button6, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button7, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button8, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button9, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button10, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button11, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button12, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button13, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button14, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button15, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button16, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button17, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button18, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button19, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button20, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button21, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button22, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button23, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button24, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    /*When any button is pressed, close the window
+    This will change later on in the program, but it is easier to do it this way for now.  */
+    gtk_grid_attach(Grid, button1, 1, 1, 1, 1); 
+    gtk_grid_attach(Grid, button2, 1, 2, 1, 1); 
+    gtk_grid_attach(Grid, button3, 1, 3, 1, 1); 
+    gtk_grid_attach(Grid, button4, 1, 4, 1, 1); 
+    gtk_grid_attach(Grid, button5, 1, 5, 1, 1); 
+    gtk_grid_attach(Grid, button6, 1, 6, 1, 1); 
+    gtk_grid_attach(Grid, button7, 2, 1, 1, 1); 
+    gtk_grid_attach(Grid, button8, 2, 2, 1, 1); 
+    gtk_grid_attach(Grid, button9, 2, 3, 1, 1); 
+    gtk_grid_attach(Grid, button10, 2, 4, 1, 1); 
+    gtk_grid_attach(Grid, button11, 2, 5, 1, 1); 
+    gtk_grid_attach(Grid, button12, 2, 6, 1, 1); 
+    gtk_grid_attach(Grid, button13, 3, 1, 1, 1); 
+    gtk_grid_attach(Grid, button14, 3, 2, 1, 1); 
+    gtk_grid_attach(Grid, button15, 3, 3, 1, 1); 
+    gtk_grid_attach(Grid, button16, 3, 4, 1, 1); 
+    gtk_grid_attach(Grid, button17, 3, 5, 1, 1); 
+    gtk_grid_attach(Grid, button18, 3, 6, 1, 1); 
+    gtk_grid_attach(Grid, button19, 4, 1, 1, 1); 
+    gtk_grid_attach(Grid, button20, 4, 2, 1, 1); 
+    gtk_grid_attach(Grid, button21, 4, 3, 1, 1); 
+    gtk_grid_attach(Grid, button22, 4, 4, 1, 1); 
+    gtk_grid_attach(Grid, button23, 4, 5, 1, 1); 
+    gtk_grid_attach(Grid, button24, 4, 6, 1, 1); 
+    gtk_window_present(GTK_WINDOW(window));
+    /*Attatch the buttons to the Grid and organize them accordingly.  Also, present the window and it's child. */
+}
+
+void friday()
+{
+    GtkWidget *window;
+    GtkGrid *Grid;
+    GtkWidget *button1;
+    GtkWidget *button2; 
+    GtkWidget *button3; 
+    GtkWidget *button4; 
+    GtkWidget *button5; 
+    GtkWidget *button6; 
+    GtkWidget *button7; 
+    GtkWidget *button8; 
+    GtkWidget *button9; 
+    GtkWidget *button10; 
+    GtkWidget *button11; 
+    GtkWidget *button12; 
+    GtkWidget *button13; 
+    GtkWidget *button14; 
+    GtkWidget *button15; 
+    GtkWidget *button16; 
+    GtkWidget *button17; 
+    GtkWidget *button18; 
+    GtkWidget *button19; 
+    GtkWidget *button20; 
+    GtkWidget *button21; 
+    GtkWidget *button22; 
+    GtkWidget *button23; 
+    GtkWidget *button24; 
+    /*These are all the widgets.  There are 24 buttons due to the 24 hours in a day.  */
+    window = gtk_window_new();
+    gtk_window_set_title(GTK_WINDOW(window), "Friday");
+    Grid = gtk_grid_new(); 
+    gtk_window_set_child(GTK_WINDOW(window), Grid);
+    /*Construct the window and the grid as it's child.  */
+    button1 = gtk_button_new_with_label("12AM");
+    button2 = gtk_button_new_with_label("1AM");
+    button3 = gtk_button_new_with_label("2AM");
+    button4 = gtk_button_new_with_label("3AM");
+    button5 = gtk_button_new_with_label("4AM");
+    button6 = gtk_button_new_with_label("5AM");
+    button7 = gtk_button_new_with_label("6AM");
+    button8 = gtk_button_new_with_label("7AM");
+    button9 = gtk_button_new_with_label("8AM");
+    button10 = gtk_button_new_with_label("9AM");
+    button11 = gtk_button_new_with_label("10AM");
+    button12 = gtk_button_new_with_label("11AM");
+    button13 = gtk_button_new_with_label("12PM");
+    button14 = gtk_button_new_with_label("1PM");
+    button15 = gtk_button_new_with_label("2PM");
+    button16 = gtk_button_new_with_label("3PM");
+    button17 = gtk_button_new_with_label("4PM");
+    button18 = gtk_button_new_with_label("5PM");
+    button19 = gtk_button_new_with_label("6PM");
+    button20 = gtk_button_new_with_label("7PM");
+    button21 = gtk_button_new_with_label("8PM");
+    button22 = gtk_button_new_with_label("9PM");
+    button23 = gtk_button_new_with_label("10PM");
+    button24 = gtk_button_new_with_label("11PM");
+    /*Create 24 buttons that list the hour*/
+    g_signal_connect_swapped(button1, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button2, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button3, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button4, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button5, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button6, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button7, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button8, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button9, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button10, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button11, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button12, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button13, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button14, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button15, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button16, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button17, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button18, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button19, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button20, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button21, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button22, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button23, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button24, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    /*When any button is pressed, close the window
+    This will change later on in the program, but it is easier to do it this way for now.  */
+    gtk_grid_attach(Grid, button1, 1, 1, 1, 1); 
+    gtk_grid_attach(Grid, button2, 1, 2, 1, 1); 
+    gtk_grid_attach(Grid, button3, 1, 3, 1, 1); 
+    gtk_grid_attach(Grid, button4, 1, 4, 1, 1); 
+    gtk_grid_attach(Grid, button5, 1, 5, 1, 1); 
+    gtk_grid_attach(Grid, button6, 1, 6, 1, 1); 
+    gtk_grid_attach(Grid, button7, 2, 1, 1, 1); 
+    gtk_grid_attach(Grid, button8, 2, 2, 1, 1); 
+    gtk_grid_attach(Grid, button9, 2, 3, 1, 1); 
+    gtk_grid_attach(Grid, button10, 2, 4, 1, 1); 
+    gtk_grid_attach(Grid, button11, 2, 5, 1, 1); 
+    gtk_grid_attach(Grid, button12, 2, 6, 1, 1); 
+    gtk_grid_attach(Grid, button13, 3, 1, 1, 1); 
+    gtk_grid_attach(Grid, button14, 3, 2, 1, 1); 
+    gtk_grid_attach(Grid, button15, 3, 3, 1, 1); 
+    gtk_grid_attach(Grid, button16, 3, 4, 1, 1); 
+    gtk_grid_attach(Grid, button17, 3, 5, 1, 1); 
+    gtk_grid_attach(Grid, button18, 3, 6, 1, 1); 
+    gtk_grid_attach(Grid, button19, 4, 1, 1, 1); 
+    gtk_grid_attach(Grid, button20, 4, 2, 1, 1); 
+    gtk_grid_attach(Grid, button21, 4, 3, 1, 1); 
+    gtk_grid_attach(Grid, button22, 4, 4, 1, 1); 
+    gtk_grid_attach(Grid, button23, 4, 5, 1, 1); 
+    gtk_grid_attach(Grid, button24, 4, 6, 1, 1); 
+    gtk_window_present(GTK_WINDOW(window));
+    /*Attatch the buttons to the Grid and organize them accordingly.  Also, present the window and it's child. */
+}
+
+void thursday()
+{
+    GtkWidget *window;
+    GtkGrid *Grid;
+    GtkWidget *button1;
+    GtkWidget *button2; 
+    GtkWidget *button3; 
+    GtkWidget *button4; 
+    GtkWidget *button5; 
+    GtkWidget *button6; 
+    GtkWidget *button7; 
+    GtkWidget *button8; 
+    GtkWidget *button9; 
+    GtkWidget *button10; 
+    GtkWidget *button11; 
+    GtkWidget *button12; 
+    GtkWidget *button13; 
+    GtkWidget *button14; 
+    GtkWidget *button15; 
+    GtkWidget *button16; 
+    GtkWidget *button17; 
+    GtkWidget *button18; 
+    GtkWidget *button19; 
+    GtkWidget *button20; 
+    GtkWidget *button21; 
+    GtkWidget *button22; 
+    GtkWidget *button23; 
+    GtkWidget *button24; 
+    /*These are all the widgets.  There are 24 buttons due to the 24 hours in a day.  */
+    window = gtk_window_new();
+    gtk_window_set_title(GTK_WINDOW(window), "Thursday");
+    Grid = gtk_grid_new(); 
+    gtk_window_set_child(GTK_WINDOW(window), Grid);
+    /*Construct the window and the grid as it's child.  */
+    button1 = gtk_button_new_with_label("12AM");
+    button2 = gtk_button_new_with_label("1AM");
+    button3 = gtk_button_new_with_label("2AM");
+    button4 = gtk_button_new_with_label("3AM");
+    button5 = gtk_button_new_with_label("4AM");
+    button6 = gtk_button_new_with_label("5AM");
+    button7 = gtk_button_new_with_label("6AM");
+    button8 = gtk_button_new_with_label("7AM");
+    button9 = gtk_button_new_with_label("8AM");
+    button10 = gtk_button_new_with_label("9AM");
+    button11 = gtk_button_new_with_label("10AM");
+    button12 = gtk_button_new_with_label("11AM");
+    button13 = gtk_button_new_with_label("12PM");
+    button14 = gtk_button_new_with_label("1PM");
+    button15 = gtk_button_new_with_label("2PM");
+    button16 = gtk_button_new_with_label("3PM");
+    button17 = gtk_button_new_with_label("4PM");
+    button18 = gtk_button_new_with_label("5PM");
+    button19 = gtk_button_new_with_label("6PM");
+    button20 = gtk_button_new_with_label("7PM");
+    button21 = gtk_button_new_with_label("8PM");
+    button22 = gtk_button_new_with_label("9PM");
+    button23 = gtk_button_new_with_label("10PM");
+    button24 = gtk_button_new_with_label("11PM");
+    /*Create 24 buttons that list the hour*/
+    g_signal_connect_swapped(button1, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button2, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button3, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button4, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button5, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button6, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button7, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button8, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button9, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button10, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button11, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button12, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button13, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button14, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button15, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button16, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button17, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button18, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button19, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button20, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button21, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button22, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button23, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button24, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    /*When any button is pressed, close the window
+    This will change later on in the program, but it is easier to do it this way for now.  */
+    gtk_grid_attach(Grid, button1, 1, 1, 1, 1); 
+    gtk_grid_attach(Grid, button2, 1, 2, 1, 1); 
+    gtk_grid_attach(Grid, button3, 1, 3, 1, 1); 
+    gtk_grid_attach(Grid, button4, 1, 4, 1, 1); 
+    gtk_grid_attach(Grid, button5, 1, 5, 1, 1); 
+    gtk_grid_attach(Grid, button6, 1, 6, 1, 1); 
+    gtk_grid_attach(Grid, button7, 2, 1, 1, 1); 
+    gtk_grid_attach(Grid, button8, 2, 2, 1, 1); 
+    gtk_grid_attach(Grid, button9, 2, 3, 1, 1); 
+    gtk_grid_attach(Grid, button10, 2, 4, 1, 1); 
+    gtk_grid_attach(Grid, button11, 2, 5, 1, 1); 
+    gtk_grid_attach(Grid, button12, 2, 6, 1, 1); 
+    gtk_grid_attach(Grid, button13, 3, 1, 1, 1); 
+    gtk_grid_attach(Grid, button14, 3, 2, 1, 1); 
+    gtk_grid_attach(Grid, button15, 3, 3, 1, 1); 
+    gtk_grid_attach(Grid, button16, 3, 4, 1, 1); 
+    gtk_grid_attach(Grid, button17, 3, 5, 1, 1); 
+    gtk_grid_attach(Grid, button18, 3, 6, 1, 1); 
+    gtk_grid_attach(Grid, button19, 4, 1, 1, 1); 
+    gtk_grid_attach(Grid, button20, 4, 2, 1, 1); 
+    gtk_grid_attach(Grid, button21, 4, 3, 1, 1); 
+    gtk_grid_attach(Grid, button22, 4, 4, 1, 1); 
+    gtk_grid_attach(Grid, button23, 4, 5, 1, 1); 
+    gtk_grid_attach(Grid, button24, 4, 6, 1, 1); 
+    gtk_window_present(GTK_WINDOW(window));
+    /*Attatch the buttons to the Grid and organize them accordingly.  Also, present the window and it's child. */
+}
+
+void wednesday()
+{
+    GtkWidget *window;
+    GtkGrid *Grid;
+    GtkWidget *button1;
+    GtkWidget *button2; 
+    GtkWidget *button3; 
+    GtkWidget *button4; 
+    GtkWidget *button5; 
+    GtkWidget *button6; 
+    GtkWidget *button7; 
+    GtkWidget *button8; 
+    GtkWidget *button9; 
+    GtkWidget *button10; 
+    GtkWidget *button11; 
+    GtkWidget *button12; 
+    GtkWidget *button13; 
+    GtkWidget *button14; 
+    GtkWidget *button15; 
+    GtkWidget *button16; 
+    GtkWidget *button17; 
+    GtkWidget *button18; 
+    GtkWidget *button19; 
+    GtkWidget *button20; 
+    GtkWidget *button21; 
+    GtkWidget *button22; 
+    GtkWidget *button23; 
+    GtkWidget *button24; 
+    /*These are all the widgets.  There are 24 buttons due to the 24 hours in a day.  */
+    window = gtk_window_new();
+    gtk_window_set_title(GTK_WINDOW(window), "Wednesday");
+    Grid = gtk_grid_new(); 
+    gtk_window_set_child(GTK_WINDOW(window), Grid);
+    /*Construct the window and the grid as it's child.  */
+    button1 = gtk_button_new_with_label("12AM");
+    button2 = gtk_button_new_with_label("1AM");
+    button3 = gtk_button_new_with_label("2AM");
+    button4 = gtk_button_new_with_label("3AM");
+    button5 = gtk_button_new_with_label("4AM");
+    button6 = gtk_button_new_with_label("5AM");
+    button7 = gtk_button_new_with_label("6AM");
+    button8 = gtk_button_new_with_label("7AM");
+    button9 = gtk_button_new_with_label("8AM");
+    button10 = gtk_button_new_with_label("9AM");
+    button11 = gtk_button_new_with_label("10AM");
+    button12 = gtk_button_new_with_label("11AM");
+    button13 = gtk_button_new_with_label("12PM");
+    button14 = gtk_button_new_with_label("1PM");
+    button15 = gtk_button_new_with_label("2PM");
+    button16 = gtk_button_new_with_label("3PM");
+    button17 = gtk_button_new_with_label("4PM");
+    button18 = gtk_button_new_with_label("5PM");
+    button19 = gtk_button_new_with_label("6PM");
+    button20 = gtk_button_new_with_label("7PM");
+    button21 = gtk_button_new_with_label("8PM");
+    button22 = gtk_button_new_with_label("9PM");
+    button23 = gtk_button_new_with_label("10PM");
+    button24 = gtk_button_new_with_label("11PM");
+    /*Create 24 buttons that list the hour*/
+    g_signal_connect_swapped(button1, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button2, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button3, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button4, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button5, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button6, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button7, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button8, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button9, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button10, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button11, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button12, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button13, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button14, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button15, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button16, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button17, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button18, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button19, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button20, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button21, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button22, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button23, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button24, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    /*When any button is pressed, close the window
+    This will change later on in the program, but it is easier to do it this way for now.  */
+    gtk_grid_attach(Grid, button1, 1, 1, 1, 1); 
+    gtk_grid_attach(Grid, button2, 1, 2, 1, 1); 
+    gtk_grid_attach(Grid, button3, 1, 3, 1, 1); 
+    gtk_grid_attach(Grid, button4, 1, 4, 1, 1); 
+    gtk_grid_attach(Grid, button5, 1, 5, 1, 1); 
+    gtk_grid_attach(Grid, button6, 1, 6, 1, 1); 
+    gtk_grid_attach(Grid, button7, 2, 1, 1, 1); 
+    gtk_grid_attach(Grid, button8, 2, 2, 1, 1); 
+    gtk_grid_attach(Grid, button9, 2, 3, 1, 1); 
+    gtk_grid_attach(Grid, button10, 2, 4, 1, 1); 
+    gtk_grid_attach(Grid, button11, 2, 5, 1, 1); 
+    gtk_grid_attach(Grid, button12, 2, 6, 1, 1); 
+    gtk_grid_attach(Grid, button13, 3, 1, 1, 1); 
+    gtk_grid_attach(Grid, button14, 3, 2, 1, 1); 
+    gtk_grid_attach(Grid, button15, 3, 3, 1, 1); 
+    gtk_grid_attach(Grid, button16, 3, 4, 1, 1); 
+    gtk_grid_attach(Grid, button17, 3, 5, 1, 1); 
+    gtk_grid_attach(Grid, button18, 3, 6, 1, 1); 
+    gtk_grid_attach(Grid, button19, 4, 1, 1, 1); 
+    gtk_grid_attach(Grid, button20, 4, 2, 1, 1); 
+    gtk_grid_attach(Grid, button21, 4, 3, 1, 1); 
+    gtk_grid_attach(Grid, button22, 4, 4, 1, 1); 
+    gtk_grid_attach(Grid, button23, 4, 5, 1, 1); 
+    gtk_grid_attach(Grid, button24, 4, 6, 1, 1); 
+    gtk_window_present(GTK_WINDOW(window));
+    /*Attatch the buttons to the Grid and organize them accordingly.  Also, present the window and it's child. */
+}
+
+void tuesday()
+{
+    GtkWidget *window;
+    GtkGrid *Grid;
+    GtkWidget *button1;
+    GtkWidget *button2; 
+    GtkWidget *button3; 
+    GtkWidget *button4; 
+    GtkWidget *button5; 
+    GtkWidget *button6; 
+    GtkWidget *button7; 
+    GtkWidget *button8; 
+    GtkWidget *button9; 
+    GtkWidget *button10; 
+    GtkWidget *button11; 
+    GtkWidget *button12; 
+    GtkWidget *button13; 
+    GtkWidget *button14; 
+    GtkWidget *button15; 
+    GtkWidget *button16; 
+    GtkWidget *button17; 
+    GtkWidget *button18; 
+    GtkWidget *button19; 
+    GtkWidget *button20; 
+    GtkWidget *button21; 
+    GtkWidget *button22; 
+    GtkWidget *button23; 
+    GtkWidget *button24; 
+    /*These are all the widgets.  There are 24 buttons due to the 24 hours in a day.  */
+    window = gtk_window_new();
+    gtk_window_set_title(GTK_WINDOW(window), "Tuesday");
+    Grid = gtk_grid_new(); 
+    gtk_window_set_child(GTK_WINDOW(window), Grid);
+    /*Construct the window and the grid as it's child.  */
+    button1 = gtk_button_new_with_label("12AM");
+    button2 = gtk_button_new_with_label("1AM");
+    button3 = gtk_button_new_with_label("2AM");
+    button4 = gtk_button_new_with_label("3AM");
+    button5 = gtk_button_new_with_label("4AM");
+    button6 = gtk_button_new_with_label("5AM");
+    button7 = gtk_button_new_with_label("6AM");
+    button8 = gtk_button_new_with_label("7AM");
+    button9 = gtk_button_new_with_label("8AM");
+    button10 = gtk_button_new_with_label("9AM");
+    button11 = gtk_button_new_with_label("10AM");
+    button12 = gtk_button_new_with_label("11AM");
+    button13 = gtk_button_new_with_label("12PM");
+    button14 = gtk_button_new_with_label("1PM");
+    button15 = gtk_button_new_with_label("2PM");
+    button16 = gtk_button_new_with_label("3PM");
+    button17 = gtk_button_new_with_label("4PM");
+    button18 = gtk_button_new_with_label("5PM");
+    button19 = gtk_button_new_with_label("6PM");
+    button20 = gtk_button_new_with_label("7PM");
+    button21 = gtk_button_new_with_label("8PM");
+    button22 = gtk_button_new_with_label("9PM");
+    button23 = gtk_button_new_with_label("10PM");
+    button24 = gtk_button_new_with_label("11PM");
+    /*Create 24 buttons that list the hour*/
+    g_signal_connect_swapped(button1, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button2, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button3, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button4, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button5, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button6, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button7, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button8, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button9, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button10, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button11, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button12, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button13, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button14, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button15, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button16, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button17, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button18, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button19, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button20, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button21, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button22, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button23, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button24, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    /*When any button is pressed, close the window
+    This will change later on in the program, but it is easier to do it this way for now.  */
+    gtk_grid_attach(Grid, button1, 1, 1, 1, 1); 
+    gtk_grid_attach(Grid, button2, 1, 2, 1, 1); 
+    gtk_grid_attach(Grid, button3, 1, 3, 1, 1); 
+    gtk_grid_attach(Grid, button4, 1, 4, 1, 1); 
+    gtk_grid_attach(Grid, button5, 1, 5, 1, 1); 
+    gtk_grid_attach(Grid, button6, 1, 6, 1, 1); 
+    gtk_grid_attach(Grid, button7, 2, 1, 1, 1); 
+    gtk_grid_attach(Grid, button8, 2, 2, 1, 1); 
+    gtk_grid_attach(Grid, button9, 2, 3, 1, 1); 
+    gtk_grid_attach(Grid, button10, 2, 4, 1, 1); 
+    gtk_grid_attach(Grid, button11, 2, 5, 1, 1); 
+    gtk_grid_attach(Grid, button12, 2, 6, 1, 1); 
+    gtk_grid_attach(Grid, button13, 3, 1, 1, 1); 
+    gtk_grid_attach(Grid, button14, 3, 2, 1, 1); 
+    gtk_grid_attach(Grid, button15, 3, 3, 1, 1); 
+    gtk_grid_attach(Grid, button16, 3, 4, 1, 1); 
+    gtk_grid_attach(Grid, button17, 3, 5, 1, 1); 
+    gtk_grid_attach(Grid, button18, 3, 6, 1, 1); 
+    gtk_grid_attach(Grid, button19, 4, 1, 1, 1); 
+    gtk_grid_attach(Grid, button20, 4, 2, 1, 1); 
+    gtk_grid_attach(Grid, button21, 4, 3, 1, 1); 
+    gtk_grid_attach(Grid, button22, 4, 4, 1, 1); 
+    gtk_grid_attach(Grid, button23, 4, 5, 1, 1); 
+    gtk_grid_attach(Grid, button24, 4, 6, 1, 1); 
+    gtk_window_present(GTK_WINDOW(window));
+    /*Attatch the buttons to the Grid and organize them accordingly.  Also, present the window and it's child. */
+}
+
+void monday()
+{
+    GtkWidget *window;
+    GtkGrid *Grid;
+    GtkWidget *button1;
+    GtkWidget *button2; 
+    GtkWidget *button3; 
+    GtkWidget *button4; 
+    GtkWidget *button5; 
+    GtkWidget *button6; 
+    GtkWidget *button7; 
+    GtkWidget *button8; 
+    GtkWidget *button9; 
+    GtkWidget *button10; 
+    GtkWidget *button11; 
+    GtkWidget *button12; 
+    GtkWidget *button13; 
+    GtkWidget *button14; 
+    GtkWidget *button15; 
+    GtkWidget *button16; 
+    GtkWidget *button17; 
+    GtkWidget *button18; 
+    GtkWidget *button19; 
+    GtkWidget *button20; 
+    GtkWidget *button21; 
+    GtkWidget *button22; 
+    GtkWidget *button23; 
+    GtkWidget *button24; 
+    /*These are all the widgets.  There are 24 buttons due to the 24 hours in a day.  */
+    window = gtk_window_new();
+    gtk_window_set_title(GTK_WINDOW(window), "Monday");
+    Grid = gtk_grid_new(); 
+    gtk_window_set_child(GTK_WINDOW(window), Grid);
+    /*Construct the window and the grid as it's child.  */
+    button1 = gtk_button_new_with_label("12AM");
+    button2 = gtk_button_new_with_label("1AM");
+    button3 = gtk_button_new_with_label("2AM");
+    button4 = gtk_button_new_with_label("3AM");
+    button5 = gtk_button_new_with_label("4AM");
+    button6 = gtk_button_new_with_label("5AM");
+    button7 = gtk_button_new_with_label("6AM");
+    button8 = gtk_button_new_with_label("7AM");
+    button9 = gtk_button_new_with_label("8AM");
+    button10 = gtk_button_new_with_label("9AM");
+    button11 = gtk_button_new_with_label("10AM");
+    button12 = gtk_button_new_with_label("11AM");
+    button13 = gtk_button_new_with_label("12PM");
+    button14 = gtk_button_new_with_label("1PM");
+    button15 = gtk_button_new_with_label("2PM");
+    button16 = gtk_button_new_with_label("3PM");
+    button17 = gtk_button_new_with_label("4PM");
+    button18 = gtk_button_new_with_label("5PM");
+    button19 = gtk_button_new_with_label("6PM");
+    button20 = gtk_button_new_with_label("7PM");
+    button21 = gtk_button_new_with_label("8PM");
+    button22 = gtk_button_new_with_label("9PM");
+    button23 = gtk_button_new_with_label("10PM");
+    button24 = gtk_button_new_with_label("11PM");
+    /*Create 24 buttons that list the hour*/
+    g_signal_connect_swapped(button1, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button2, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button3, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button4, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button5, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button6, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button7, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button8, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button9, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button10, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button11, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button12, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button13, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button14, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button15, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button16, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button17, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button18, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button19, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button20, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button21, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button22, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button23, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    g_signal_connect_swapped(button24, "clicked", G_CALLBACK(gtk_window_destroy), window);
+    /*When any button is pressed, close the window
+    This will change later on in the program, but it is easier to do it this way for now.  */
+    gtk_grid_attach(Grid, button1, 1, 1, 1, 1); 
+    gtk_grid_attach(Grid, button2, 1, 2, 1, 1); 
+    gtk_grid_attach(Grid, button3, 1, 3, 1, 1); 
+    gtk_grid_attach(Grid, button4, 1, 4, 1, 1); 
+    gtk_grid_attach(Grid, button5, 1, 5, 1, 1); 
+    gtk_grid_attach(Grid, button6, 1, 6, 1, 1); 
+    gtk_grid_attach(Grid, button7, 2, 1, 1, 1); 
+    gtk_grid_attach(Grid, button8, 2, 2, 1, 1); 
+    gtk_grid_attach(Grid, button9, 2, 3, 1, 1); 
+    gtk_grid_attach(Grid, button10, 2, 4, 1, 1); 
+    gtk_grid_attach(Grid, button11, 2, 5, 1, 1); 
+    gtk_grid_attach(Grid, button12, 2, 6, 1, 1); 
+    gtk_grid_attach(Grid, button13, 3, 1, 1, 1); 
+    gtk_grid_attach(Grid, button14, 3, 2, 1, 1); 
+    gtk_grid_attach(Grid, button15, 3, 3, 1, 1); 
+    gtk_grid_attach(Grid, button16, 3, 4, 1, 1); 
+    gtk_grid_attach(Grid, button17, 3, 5, 1, 1); 
+    gtk_grid_attach(Grid, button18, 3, 6, 1, 1); 
+    gtk_grid_attach(Grid, button19, 4, 1, 1, 1); 
+    gtk_grid_attach(Grid, button20, 4, 2, 1, 1); 
+    gtk_grid_attach(Grid, button21, 4, 3, 1, 1); 
+    gtk_grid_attach(Grid, button22, 4, 4, 1, 1); 
+    gtk_grid_attach(Grid, button23, 4, 5, 1, 1); 
+    gtk_grid_attach(Grid, button24, 4, 6, 1, 1); 
+    gtk_window_present(GTK_WINDOW(window));
+    /*Attatch the buttons to the Grid and organize them accordingly.  Also, present the window and it's child. */
+}
 
 static void on_open_response (GtkDialog *dialog, int response)
 {
@@ -126,53 +1180,40 @@ print_hello(GtkWidget *widget,
     }
     if (index123 == 1)
     {
-        window = gtk_window_new();
-        gtk_window_set_title(GTK_WINDOW(window), "Monday");
+        monday();
+        //Go to the Monday function to edit the Monday config stuff.  
     }
     if (index123 == 2)
     {
-        window = gtk_window_new();
-        gtk_window_set_title(GTK_WINDOW(window), "Tuesday");
+        tuesday(); 
+        //Go to the Tuesday function to edit the Tuesday config stuff. 
     }
     if (index123 == 3)
     {
-        window = gtk_window_new();
-        gtk_window_set_title(GTK_WINDOW(window), "Wednesday");
+        wednesday(); 
+        //Go to the Wednesday function to edit the Wednesday config stuff. 
     }
     if (index123 == 4)
     {
-        window = gtk_window_new();
-        gtk_window_set_title(GTK_WINDOW(window), "Thursday");
+        thursday(); 
+        //Go to the Thursday function to edit the Thursday config stuff. 
     }
     if (index123 == 5)
     {
-        window = gtk_window_new();
-        gtk_window_set_title(GTK_WINDOW(window), "Friday");
+        friday(); 
+        //Go to the Friday function to edit the Friday config stuff. 
     }
     if (index123 == 6)
     {
-        window = gtk_window_new();
-        gtk_window_set_title(GTK_WINDOW(window), "Saturday");
+        saturday(); 
+        //Go to the Saturday function to edit the Saturday config stuff.  
     }
     if (index123 == 7)
     {
-        window = gtk_window_new();
-        gtk_window_set_title(GTK_WINDOW(window), "Sunday");
+        sunday(); 
+        //go to the Sunday function to edit the Sunday config stuff. 
     }
-    /*For each option (Corrosponds with dropdown index), create a new window and change the name of the window*/
-    box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
-    gtk_widget_set_halign(box, GTK_ALIGN_CENTER);
-    gtk_widget_set_valign(box, GTK_ALIGN_CENTER);
-    /*Allign the widgets to the center of the screen*/
-    gtk_window_set_child(GTK_WINDOW(window), box);
-    /*Connect the box to the window*/
-    button1 = gtk_button_new_with_label("Ye'Haw!");
-    /*Create a button that says "Ye'Haw!"*/
-    g_signal_connect_swapped(button1, "clicked", G_CALLBACK(gtk_window_destroy), window);
-    /*When this button is pressed, close the window*/
-    gtk_box_append(GTK_BOX(box), button1);
-    gtk_window_present(GTK_WINDOW(window));
-    /*Attatch the button to the box and present the window. */
+    
 }
 /*print_hello is the function that creates a new window to edit the configuration for each day*/
 
